@@ -18,6 +18,7 @@ class Modal extends Component {
             backgroundColor: "rgba(0,0,0,0.3)"
           }}
           onClick={this.props.controlarModal}
+          className={this.props.nombre}
         >
           <div
             style={{

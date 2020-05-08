@@ -4,17 +4,31 @@ import Carrito from "./Carrito"
 import Modal from "./Modal"
 
 
-function Header({ alerta, carrito, borrarElemento, verModal, controlarModal }) {
+function Header({
+    alerta,
+    carrito,
+    borrarElemento,
+    verModalRopa,
+    verModalLogin,
+    controlarModalLogin,
+    controlarModalRopa
+}) {
     return (
         <div className="header">
             <nav className="nav1" id="nav">
                 <ul className="navItems">
                     <li>
-                        <i className="fas fa-users-cog" id="admin" onClick={controlarModal}>
+                        <i className="fas fa-users-cog" id="admin" onClick={controlarModalLogin}>
                         </i>
                     </li>
                     <li>
-                        <Carrito alerta={alerta} carrito={carrito} borrarElemento={borrarElemento} />
+                        <Carrito
+                            alerta={alerta}
+                            carrito={carrito}
+                            borrarElemento={borrarElemento}
+                            controlarModal={controlarModalRopa}
+                            verModalRopa={verModalRopa}
+                        />
                     </li>
                 </ul>
             </nav>
@@ -46,9 +60,15 @@ function Header({ alerta, carrito, borrarElemento, verModal, controlarModal }) {
                     </li>
                 </ul>
             </section>
-            {verModal ? <Modal controlarModal={controlarModal} verModal={verModal}>
-                hi
-            </Modal> :
+            {verModalLogin ?
+                <Modal
+                    controlarModal={controlarModalLogin}
+                    verModalLogin={verModalLogin}
+                    nombre="sign-in"
+                >
+                    hi
+            </Modal>
+                :
                 null}
         </div>
     )

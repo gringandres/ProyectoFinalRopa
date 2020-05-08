@@ -53,7 +53,8 @@ class MainPage extends Component {
     ],
     carrito: [],
     alerta: false,
-    verModal: false
+    verModalLogin: false,
+    verModalRopa: false
   }
 
   agregarCarrito = producto => {
@@ -66,8 +67,12 @@ class MainPage extends Component {
     })
   }
 
-  controlarModal = () => {
-    this.setState({ verModal: !this.state.verModal })
+  controlarModalRopa = () => {
+    this.setState({ verModalRopa: !this.state.verModalRopa })
+  }
+
+  controlarModalLogin = () => {
+    this.setState({ verModalLogin: !this.state.verModalLogin })
   }
 
   borrarElemento = (e, id) => {
@@ -85,15 +90,17 @@ class MainPage extends Component {
   }
 
   render() {
-    const { productos, carrito, alerta, verModal } = this.state
+    const { productos, carrito, alerta, verModalLogin, verModalRopa } = this.state
     return (
       <>
-        <Header 
-          carrito={carrito} 
-          alerta={alerta} 
-          borrarElemento={this.borrarElemento} 
-          verModal={verModal} 
-          controlarModal={this.controlarModal} 
+        <Header
+          carrito={carrito}
+          alerta={alerta}
+          borrarElemento={this.borrarElemento}
+          verModalLogin={verModalLogin}
+          verModalRopa={verModalRopa}
+          controlarModalRopa={this.controlarModalRopa}
+          controlarModalLogin={this.controlarModalLogin}
         />
         <section className="productos">
           <h1>Nuestros Productos</h1>

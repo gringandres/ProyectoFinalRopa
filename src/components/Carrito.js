@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Tabla from './Tabla'
+import Modal from './Modal'
 
 class Carrito extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Carrito extends Component {
 
   render() {
     const { mostrarCarrito } = this.state
-    const { alerta, carrito, borrarElemento } = this.props
+    const { alerta, carrito, borrarElemento, controlarModal, verModalRopa } = this.props
     const carritoMostrar = (
       <div className="menuCarrito menudos" id="menuCarrito">
         <h3>Carrito</h3>
@@ -31,25 +33,18 @@ class Carrito extends Component {
           </tr>
           {carrito.map(carro => (
             <>
-              <tr>
-                <td><img src={carro.img} alt="" /></td>
-                <td>{carro.nombre}</td>
-                <td>{carro.talla}</td>
-                <td>4</td>
-                <td>{carro.precio}</td>
-                <td>
-                  <a
-                    className="borrar"
-                    href="/"
-                    onClick={(e) => { borrarElemento(e, carro.id) }}
-                  >x
-                    </a>
-                </td>
-              </tr>
+              <Tabla
+                img={carro.img}
+                precio={carro.precio}
+                nombre={carro.nombre}
+                talla={carro.talla}
+                id={carro.id}
+                borrarElemento={borrarElemento}
+              />
             </>
           ))}
         </table>
-        <button className="botonAgregar">Continuar</button>
+        <button className="botonAgregar" onClick={controlarModal}>Continuar</button>
       </div>
     )
 
@@ -59,6 +54,13 @@ class Carrito extends Component {
           {alerta && <p id="notificacion" />}
         </i>
         {carrito.length > 0 && mostrarCarrito && carritoMostrar}
+        {verModalRopa ?
+          <Modal
+            controlarModal={controlarModal}
+            name="ropa-modal"
+          >
+            hola
+          </Modal> : null}
       </>
     )
   }
