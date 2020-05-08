@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import Header from '../components/Header'
 import Body from '../components/Body';
 import Footer from '../components/Footer';
@@ -52,7 +52,8 @@ class MainPage extends Component {
       }
     ],
     carrito: [],
-    alerta: false
+    alerta: false,
+    verModal: false
   }
 
   agregarCarrito = producto => {
@@ -63,6 +64,10 @@ class MainPage extends Component {
       ],
       alerta: true
     })
+  }
+
+  controlarModal = () => {
+    this.setState({ verModal: !this.state.verModal })
   }
 
   borrarElemento = (e, id) => {
@@ -80,10 +85,16 @@ class MainPage extends Component {
   }
 
   render() {
-    const { productos, carrito, alerta } = this.state
+    const { productos, carrito, alerta, verModal } = this.state
     return (
       <>
-        <Header carrito={carrito} alerta={alerta} borrarElemento={this.borrarElemento} />
+        <Header 
+          carrito={carrito} 
+          alerta={alerta} 
+          borrarElemento={this.borrarElemento} 
+          verModal={verModal} 
+          controlarModal={this.controlarModal} 
+        />
         <section className="productos">
           <h1>Nuestros Productos</h1>
           <div className="container" id="container">

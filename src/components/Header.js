@@ -1,19 +1,17 @@
 import React from 'react'
 import "../styles/Header.css"
-import Carrito from "../components/Carrito"
+import Carrito from "./Carrito"
+import Modal from "./Modal"
 
 
-function Header({ alerta, carrito, borrarElemento }) {
+function Header({ alerta, carrito, borrarElemento, verModal, controlarModal }) {
     return (
         <div className="header">
             <nav className="nav1" id="nav">
                 <ul className="navItems">
                     <li>
-                        <a href="login.html">
-                            <i className="fas fa-users-cog" id="admin">
-                            </i>
-                        </a>
-
+                        <i className="fas fa-users-cog" id="admin" onClick={controlarModal}>
+                        </i>
                     </li>
                     <li>
                         <Carrito alerta={alerta} carrito={carrito} borrarElemento={borrarElemento} />
@@ -48,6 +46,10 @@ function Header({ alerta, carrito, borrarElemento }) {
                     </li>
                 </ul>
             </section>
+            {verModal ? <Modal controlarModal={controlarModal} verModal={verModal}>
+                hi
+            </Modal> :
+                null}
         </div>
     )
 }
