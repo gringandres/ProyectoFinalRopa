@@ -8,7 +8,6 @@ class Carrito extends Component {
     this.state = {
       mostrarCarrito: false
     }
-
   }
 
   controlarCarrito = () => {
@@ -44,7 +43,15 @@ class Carrito extends Component {
             </>
           ))}
         </table>
-        <button className="botonAgregar" onClick={controlarModal}>Continuar</button>
+        <button
+          className="botonAgregar"
+          onClick={() => {
+            controlarModal()
+            this.controlarCarrito()
+          }}
+        >
+          Continuar
+        </button>
       </div>
     )
 
@@ -59,7 +66,27 @@ class Carrito extends Component {
             controlarModal={controlarModal}
             name="ropa-modal"
           >
-            hola
+            <table id="detallePedido">
+              <tr>
+                <th>Imagen</th>
+                <th>Referencia</th>
+                <th>Talla</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+              </tr>
+              {carrito.map(carro => (
+                <>
+                  <Tabla
+                    img={carro.img}
+                    precio={carro.precio}
+                    nombre={carro.nombre}
+                    talla={carro.talla}
+                    id={carro.id}
+                    borrarElemento={borrarElemento}
+                  />
+                </>
+              ))}
+            </table>
           </Modal> : null}
       </>
     )
