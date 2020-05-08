@@ -1,0 +1,237 @@
+.header {
+  width: 100%;
+}
+nav {
+  width: 80%;
+  position: fixed;
+  top: 0;
+  left: 10%;
+}
+
+.navItems {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navItems i {
+  color: grey;
+  font-size: 32px;
+  position: relative;
+  cursor: pointer;
+}
+#notificacion {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  bottom: 80%;
+  left: 100%;
+  display: block;
+}
+
+.menuCarrito {
+  width: 500px;
+  height: auto;
+  position: absolute;
+  background: white;
+  right: 0;
+}
+.menudos {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+td {
+  border-bottom: 1px solid grey;
+  padding: 0.3em;
+  text-align: center;
+}
+
+th {
+  width: 100%;
+  background: teal;
+  color: white;
+  text-align: center;
+}
+#detallePedido img {
+  width: 80px;
+  height: 60px;
+}
+.borrar {
+  display: block;
+  text-decoration: none;
+  background: red;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: whitesmoke;
+}
+.imagenesHeader {
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.fondo1,
+.fondo2 {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.fondo1 img,
+.fondo2 img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.fondo11 {
+  animation: animacion 6s linear 4s infinite;
+}
+.fondo12 {
+  animation: animacion 6s linear 2s infinite;
+}
+.fondo13 {
+  animation: animacion 6s linear 0s infinite;
+}
+
+.fondo21 {
+  animation: animacion 6s linear 6s infinite;
+}
+.fondo22 {
+  animation: animacion 6s linear 4s infinite;
+}
+.fondo23 {
+  animation: animacion 6s linear 2s infinite;
+}
+
+.servicios {
+  width: 100%;
+  height: auto;
+  background: #396afc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #2948ff,
+    #396afc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #2948ff,
+    #396afc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+.serviciosList {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.serviciosList li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.serviciosList i {
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+h1 {
+  font-size: 64px;
+  text-align: center;
+  padding: 30px;
+}
+
+@keyframes animacion {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  /* ---------------------HEADER--------------------------------- */
+  .imagenesHeader {
+    position: relative;
+  }
+
+  .fondo1,
+  .fondo2 {
+    width: 100%;
+    position: absolute;
+  }
+
+  .fondo11 {
+    animation: animacion 12s linear 10s infinite;
+  }
+  .fondo12 {
+    animation: animacion 12s linear 8s infinite;
+  }
+  .fondo13 {
+    animation: animacion 12s linear 6s infinite;
+  }
+
+  .fondo21 {
+    animation: animacion 12s linear 4s infinite;
+  }
+  .fondo22 {
+    animation: animacion 12s linear 2s infinite;
+  }
+  .fondo23 {
+    animation: animacion 12s linear 0s infinite;
+  }
+  /* ---------------------FIN HEADER--------------------------------- */
+
+  /* ---------------------PRODUCTOS--------------------------------- */
+  .navItems {
+    flex-direction: column;
+  }
+
+  .menuCarrito {
+    width: 95vw;
+    left: -10%;
+  }
+
+ 
+  h1 {
+    font-size: 36px;
+  }
+
+  #detallePedido img {
+    width: 60px;
+    height: 40px;
+  }
+  .borrar{
+    display: none;
+  }
+  
+  /* --------------------- FIN PRODUCTOS------------------------------*/
+}
