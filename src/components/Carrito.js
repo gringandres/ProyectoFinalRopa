@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Tabla from './Tabla'
-import Modal from './Modal'
+import ModalTabla from './ModalTabla'
 
 class Carrito extends Component {
   constructor(props) {
@@ -37,6 +37,7 @@ class Carrito extends Component {
                 precio={carro.precio}
                 nombre={carro.nombre}
                 talla={carro.talla}
+                cantidad={carro.cantidad}
                 id={carro.id}
                 borrarElemento={borrarElemento}
               />
@@ -62,32 +63,12 @@ class Carrito extends Component {
         </i>
         {carrito.length > 0 && mostrarCarrito && carritoMostrar}
         {verModalRopa ?
-          <Modal
+          <ModalTabla
             controlarModal={controlarModal}
-            name="ropa-modal"
-          >
-            <table id="detallePedido">
-              <tr>
-                <th>Imagen</th>
-                <th>Referencia</th>
-                <th>Talla</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-              </tr>
-              {carrito.map(carro => (
-                <>
-                  <Tabla
-                    img={carro.img}
-                    precio={carro.precio}
-                    nombre={carro.nombre}
-                    talla={carro.talla}
-                    id={carro.id}
-                    borrarElemento={borrarElemento}
-                  />
-                </>
-              ))}
-            </table>
-          </Modal> : null}
+            borrarElemento={borrarElemento}
+            carrito={carrito}
+          /> : null}
+
       </>
     )
   }

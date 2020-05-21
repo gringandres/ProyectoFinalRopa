@@ -5,8 +5,23 @@ class Modal extends Component {
   render() {
     return ReactDOM.createPortal(
       <div>
+<<<<<<< Updated upstream
         <div  
           // onClick={this.props.controlarModal}
+=======
+        <div
+          style={{
+            position: "fixed",
+            top: "0",
+            bottom: "0",
+            left: "0",
+            right: "0",
+            display: "grid",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgba(0,0,0,0.3)"
+          }}
+>>>>>>> Stashed changes
           className={this.props.nombre}
         >
           <div className="logeo">

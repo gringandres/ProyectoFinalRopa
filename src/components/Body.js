@@ -1,11 +1,11 @@
 import React from 'react'
 import "../styles/Body.css"
 
-function Body({ id, nombre, talla, precio, img, agregarCarrito }) {
+function Body({ id, nombre, talla, cantidad, precio, img, agregarCarrito }) {
 
   const botonAgregar = e => {
     e.preventDefault()
-    const selecionado = { id, nombre, talla, precio, img }
+    const selecionado = { id, nombre, talla, cantidad, precio, img }
     agregarCarrito(selecionado)
   }
 
