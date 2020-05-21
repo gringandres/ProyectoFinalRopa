@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/Header.css"
+import "../styles/Modal.css"
 import Carrito from "./Carrito"
 import Modal from "./Modal"
 
@@ -66,8 +67,13 @@ function Header({
                     verModalLogin={verModalLogin}
                     nombre="sign-in"
                 >
-                    hi
-            </Modal>
+                    <h1>Por favor ingrese sus datos</h1>
+                    <form method="POST" class="logeo">
+                        <input type="text" placeholder="Usuario" name="usuario" required />
+                        <input type="password" placeholder="Contraseña" name="clave" required />
+                        <input type="submit" value="Enviar" />
+                    </form>
+                </Modal>
                 :
                 null}
         </div>

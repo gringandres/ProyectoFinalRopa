@@ -1,3 +1,80 @@
-.sign-in{
+.sign-in {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.sign-in input {
+  padding: 0.5em;
+  margin: 0.5em auto;
+  font-size: 1.2em;
+}
+
+.sign-in input[type="text"] {
+  background: url(../img/usuario.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.sign-in input[type="password"] {
+  background: url(../img/password.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.sign-in input[type="submit"] {
+  border-radius: 10px;
+  border: 0;
+  background: limegreen;
+  color: linen;
+  cursor: pointer;
+}
+
+.logeo {
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+  
+}
+
+.cerrarModal {
+  background: red;
+  color: whitesmoke;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+}
+
+/* ---------------PANTALLA DE TABLET(SMALL)------------  */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .logeo{
+    width: 95%;
+  }
   
 }
