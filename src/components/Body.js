@@ -11,7 +11,9 @@ function Body({ id, nombre, talla, precio, img, agregarCarrito }) {
 
   return (
     <div className="card">
-      <img src={img} alt="" />
+      <div className="ImgCard">
+        <img src={img} alt="" />
+      </div>
       <h4>{nombre}</h4>
       <p>Tallas</p>
       <p>{talla}</p>

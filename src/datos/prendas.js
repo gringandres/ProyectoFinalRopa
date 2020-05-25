@@ -1,0 +1,291 @@
+const prendas = [{
+    id: "1",
+    nombre: "Adidas 1010",
+    talla: ["L", "M"],
+    precio: "20.000",
+    dispobile: true,
+    img: "https://i.pinimg.com/originals/69/54/74/6954748f14dbac37d956822764a4e7d9.jpg"
+},
+{
+    id: "2",
+    nombre: "Adidas 1020",
+    talla: ["M", "S"],
+    precio:" 25.000",
+    dispobile: true,
+    img: "https://i.pinimg.com/originals/04/e1/d4/04e1d4ec116a4a86fe537e5eac087e86.jpg"
+},
+{
+    id: "3",
+    nombre: "Adidas 1030",
+    talla: [],
+    precio: 30.000,
+    dispobile: true,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRp7OTMyUCxtv1qC5kKozlsvzQZ3smVbdQUrAO6vyLVbLUhCfkp&usqp=CAU"
+},
+{
+    id: "4",
+    nombre: "Supreme 1010",
+    talla: [],
+    precio: 20.000,
+    dispobile: true,
+    img: "https://i.pinimg.com/564x/af/ae/bb/afaebb2ca74fea444d88f0ab526bbded.jpg"
+},
+{
+    id: "5",
+    nombre: "Adidas 1040",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://scene7.zumiez.com/is/image/zumiez/pdp_hero/adidas-Trefoil-camiseta-blanca-para-ni%C3%B1os-_289290.jpg"
+},
+{
+    id: "6",
+    nombre: "Adidas 1060",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://i.pinimg.com/564x/1f/01/57/1f01573efa89118005469d1a2ea917ac.jpg"
+},
+{
+    id: "7",
+    nombre: "Nike 1010",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://http2.mlstatic.com/remera-tenis-nike-challenger-premier-rafa-crwt-pro-D_NQ_NP_967100-MLA25569123890_052017-F.jpg"
+},
+{
+    id: "8",
+    nombre: "Jordan 1010",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://static.wixstatic.com/media/ac85f4_eaef823dcf474ecab324fcd07357a5e9~mv2.jpeg/v1/fill/w_746,h_746,al_c,q_85/ac85f4_eaef823dcf474ecab324fcd07357a5e9~mv2.webp"
+},
+{
+    id: "9",
+    nombre: "Nike 1020",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://tiendavirtualfairplay.com/4757-large_default/camiseta-nike-court-dry-tenis-tennis.jpg"
+},
+{
+    id: "9",
+    nombre: "Supreme 1020",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://lh3.googleusercontent.com/proxy/8TiDa5QFux6lIEeqTgmSvdpj_001fqp1CRlM10uJkxEkbF_hAzBhVc-aGugVySoZIl3rJC817atDpP18EfvLCfBvJST6aa6kCuPVYb1wF6EyuCI4"
+},
+{
+    id: "10",
+    nombre: "Nike 1030",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://http2.mlstatic.com/camisetas-nike-sb-dri-fit-new-D_NQ_NP_778664-MCO31542208912_072019-F.jpg"
+},
+{
+    id: "11",
+    nombre: "Jordan 1020",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://http2.mlstatic.com/camiseta-nba-chicago-bulls-michael-jordan-23-D_NQ_NP_975067-MLA27616165661_062018-F.jpg"
+},
+{
+    id: "12",
+    nombre: "Puma 1010",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://camisetas-de.com/wp-content/uploads/2015/10/41kID-vw9YL.jpg"
+},
+{
+    id: "13",
+    nombre: "Nike 1040",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.cdiscount.com/pdt2/8/0/4/1/700x700/mp11581804/rw/nike-polo-nike-sportswear.jpg"
+},
+{
+    id: "14",
+    nombre: "Puma 1020",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://deportesmanzanedo.com/23827-large_default/camiseta-puma-modern-sport-boyfriend-854229-01-negra-mujer.jpg"
+},
+{
+    id: "12",
+    nombre: "Adidas 1050 ",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://chemasport.es/8334-thickbox_default/camiseta-adidas-originals-trefoil-t-gris.jpg"
+},
+{
+    id: "11",
+    nombre: "Nike 1050",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://tiendavirtualfairplay.com/2654-large_default/camiseta-nike-just-do-it-algodon.jpg"
+},
+{
+    id: "12",
+    nombre: "Supreme 1030",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.importclothes.com.br/img/products/camiseta-supreme-masculina-7_1_1200.jpg"
+},
+{
+    id: "13",
+    nombre: "Puma 1030",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.dressinn.com/f/13657/136570690/puma-brand-box-logo.jpg"
+},
+{
+    id: "14",
+    nombre: "Puma 1040",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://static.tiendaligabbva.mx/produtos/playera-puma-liga-infantil/25/330-0295-025/330-0295-025_zoom1.jpg?ims=544x"
+},
+{
+    id: "15",
+    nombre: "Puma 1050",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.futbolsolution.com/8598-large_default/camiseta-puma-graphic-verde.jpg"
+},
+{
+    id: "17",
+    nombre: "Adidas 1060",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-H3eiui_wfepCEmAL6T5FXMxUYjowHOxBuK2d3WXBLFFzQ9_o&usqp=CAU"
+},
+{
+    id: "17",
+    nombre: "Adidas 1070",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://i.pinimg.com/originals/bf/48/fb/bf48fbcfa18cd922f03be073549213a5.jpg"
+},
+{
+    id: "18",
+    nombre: "Supreme 1040",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://i.pinimg.com/originals/5b/ba/21/5bba21db79d77ae1e541c666bce0ff1e.jpg"
+},
+{
+    id: "19",
+    nombre: "Jordan 1030",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://i.pinimg.com/originals/2d/d1/3a/2dd13a56eb1e784ab0cb4f8882ad2a23.jpg"
+},
+{
+    id: "20",
+    nombre: "Supreme 1050",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://cdn.palbin.com/users/28843/images/supreme-1534179455.jpg"
+},
+{
+    id: "21",
+    nombre: "Nike 1060",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQDeeOlYLEx8GcCL5coCs2k2auhSUra115j3WnA-kNSjR33koj&usqp=CAU"
+},
+{
+    id: "22",
+    nombre: "Nike 1070",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://chemasport.es/7700-thickbox_default/camiseta-nike-b-nk-dry-top-ss-legacy-azul.jpg"
+},
+{
+    id: "23",
+    nombre: "Puma 1060",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://static.tiendaligabbva.mx/produtos/playera-puma-play-graphic-infantil/56/003-5721-056/003-5721-056_zoom1.jpg?ts=1588690574"
+},
+{
+    id: "24",
+    nombre: "Adidas 1080",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://i.pinimg.com/originals/b8/1c/b6/b81cb6abbe3d564012a563419a157e7a.jpg"
+},
+{
+    id: "25",
+    nombre: "Jordan 1040",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://http2.mlstatic.com/camisetas-nike-jordan-23-algodon-new-D_NQ_NP_134215-MCO25190925173_112016-F.jpg"
+},
+{
+    id: "26",
+    nombre: "Adidas 1090",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.manelsanchez.com/uploads/media/images/S185171.jpg"
+},
+{
+    id: "27",
+    nombre: "Adidas 2010",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://http2.mlstatic.com/camiseta-adidas-originals-str-grp-masculina-D_NQ_NP_928449-MLB25582466854_052017-F.jpg"
+},
+{
+    id: "28",
+    nombre: "Nike 1080",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.futbolemotion.com/imagesarticulos/115185/grandes/camiseta-nike-neymar-jr-dry-armory-navy-0.jpg"
+},
+{
+    id: "29",
+    nombre: "Puma 1070",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.thefutbolstore.cl/uploads/v2/product/hi/654379_23_A.jpg"
+},
+{
+    id: "30",
+    nombre: "Nike 1090",
+    talla: [],
+    precio: 10.000,
+    dispobile: true,
+    img: "https://www.futbolemotion.com/imagesarticulos/127103/750/camiseta-nike-neymar-jr-hook-nino-white-0.jpg"
+},
+]
+
+export default prendas;

@@ -2,55 +2,13 @@ import React, { Component, useState } from 'react'
 import Header from '../components/Header'
 import Body from '../components/Body';
 import Footer from '../components/Footer';
+import datos from '../datos/prendas'
 
 import "../styles/Body.css"
 
 class MainPage extends Component {
   state = {
-    productos: [
-      {
-        id: "1",
-        nombre: "Adidas Classic",
-        talla: "L-M-S",
-        precio: 20.000,
-        img: require('../img/img7.jpg')
-      },
-      {
-        id: "2",
-        nombre: "Adidas",
-        talla: "L-M",
-        precio: 10.000,
-        img: require('../img/img8.jpg')
-      },
-      {
-        id: "3",
-        nombre: "Adidas Top",
-        talla: "M-S",
-        precio: 30.000,
-        img: require('../img/img7.jpg')
-      },
-      {
-        id: "4",
-        nombre: "Adidas Classic",
-        talla: "L-M-S",
-        precio: 20.000,
-        img: require('../img/img8.jpg')
-      },
-      {
-        id: "5",
-        nombre: "Adidas",
-        talla: "L-M",
-        precio: 10.000,
-        img: require('../img/img7.jpg')
-      },
-      {
-        id: "6",
-        nombre: "Adidas Top",
-        talla: "M-S",
-        precio: 30.000,
-        img: require('../img/img8.jpg')
-      }
-    ],
+    productos: datos,
     carrito: [],
     alerta: false,
     verModalLogin: false,
