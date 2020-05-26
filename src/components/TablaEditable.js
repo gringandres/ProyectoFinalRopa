@@ -1,18 +1,7 @@
 import React, { Component } from 'react'
 
-export class TablaEditable extends Component {
-  state = {
-    arregloCantidad: []
-  }
+class TablaEditable extends Component {
 
-  componentDidMount() {
-    const { cantidad } = this.props
-    let calcaularArreglo = []
-    for (let index = 0; index < cantidad; index++) {
-      calcaularArreglo[index] = index + 1;
-    }
-    this.setState({ arregloCantidad: calcaularArreglo })
-  }
   render() {
     const {
       img,
@@ -23,9 +12,9 @@ export class TablaEditable extends Component {
       id,
       borrarElemento,
       controlarModal,
-      carrito
+      carrito,
+      cantidadEditar
     } = this.props
-    const { arregloCantidad } = this.state
     return (
       <>
         <tr>
@@ -34,17 +23,18 @@ export class TablaEditable extends Component {
           <td>
             <select id="tallas">
               {talla.map(opcion => (
-                <option value={opcion}>{opcion}</option>
+                <option value={opcion} key={id}>{opcion}</option>
               ))}
             </select>
           </td>
           <td>{cantidad}</td>
           <td>
-            <select id="tallas">
-              {arregloCantidad && arregloCantidad.map(opcion => (
-                <option value={opcion}>{opcion}</option>
-              ))}
-            </select>
+            <input
+              type="text"
+              onChange={(e) => cantidadEditar(e, id)}
+
+            >
+            </input>
           </td>
           <td>{precio}</td>
           <td>
@@ -57,11 +47,8 @@ export class TablaEditable extends Component {
                   if (carrito === 1) {
                     controlarModal()
                   }
-                }
-              }
-            >
-              x
-          </a>
+                }}
+            >x </a>
           </td>
         </tr>
       </>

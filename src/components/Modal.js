@@ -5,10 +5,6 @@ class Modal extends Component {
   render() {
     return ReactDOM.createPortal(
       <div>
-<<<<<<< Updated upstream
-        <div  
-          // onClick={this.props.controlarModal}
-=======
         <div
           style={{
             position: "fixed",
@@ -21,13 +17,12 @@ class Modal extends Component {
             alignItems: "center",
             backgroundColor: "rgba(0,0,0,0.3)"
           }}
->>>>>>> Stashed changes
           className={this.props.nombre}
         >
           <div className="logeo">
             <div>{this.props.children}</div>
             <hr />
-            <button  className="cerrarModal" onClick={this.props.controlarModal} >X</button>
+            <button className="cerrarModal" onClick={this.props.controlarModal} >X</button>
           </div>
         </div>
 

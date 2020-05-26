@@ -6,7 +6,8 @@ class Carrito extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostrarCarrito: false
+      mostrarCarrito: false,
+      valor: 0
     }
   }
 
@@ -17,7 +18,7 @@ class Carrito extends Component {
   }
 
   render() {
-    const { mostrarCarrito } = this.state
+    const { mostrarCarrito, cantidadElegida } = this.state
     const { alerta, carrito, borrarElemento, controlarModal, verModalRopa } = this.props
     const carritoMostrar = (
       <div className="menuCarrito menudos" id="menuCarrito">
@@ -33,6 +34,7 @@ class Carrito extends Component {
           {carrito.map(carro => (
             <>
               <Tabla
+                key={carro.id}
                 img={carro.img}
                 precio={carro.precio}
                 nombre={carro.nombre}
@@ -67,6 +69,8 @@ class Carrito extends Component {
             controlarModal={controlarModal}
             borrarElemento={borrarElemento}
             carrito={carrito}
+            controlarCantidad={this.controlarCantidad}
+            cantidadElegida={cantidadElegida}
           /> : null}
 
       </>
