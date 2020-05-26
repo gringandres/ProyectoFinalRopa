@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import Header from '../components/Header'
 import Body from '../components/Body';
 import Footer from '../components/Footer';
@@ -69,6 +69,7 @@ class MainPage extends Component {
                 id={producto.id}
                 nombre={producto.nombre}
                 talla={producto.talla}
+                cantidad={producto.cantidad}
                 precio={producto.precio}
                 img={producto.img}
                 agregarCarrito={this.agregarCarrito}
