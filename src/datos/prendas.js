@@ -3,14 +3,14 @@ const prendas = [{
     nombre: "Adidas 1010",
     talla: ["L", "M"],
     precio: "20.000",
-    dispobile: true,
+    dispobile: false,
     img: "https://i.pinimg.com/originals/69/54/74/6954748f14dbac37d956822764a4e7d9.jpg"
 },
 {
     id: "2",
     nombre: "Adidas 1020",
     talla: ["M", "S"],
-    precio:" 25.000",
+    precio: " 25.000",
     dispobile: true,
     img: "https://i.pinimg.com/originals/04/e1/d4/04e1d4ec116a4a86fe537e5eac087e86.jpg"
 },

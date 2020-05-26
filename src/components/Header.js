@@ -12,7 +12,8 @@ function Header({
     verModalRopa,
     verModalLogin,
     controlarModalLogin,
-    controlarModalRopa
+    controlarModalRopa,
+    login
 }) {
     return (
         <div className="header">
@@ -23,13 +24,15 @@ function Header({
                         </i>
                     </li>
                     <li>
-                        <Carrito
-                            alerta={alerta}
-                            carrito={carrito}
-                            borrarElemento={borrarElemento}
-                            controlarModal={controlarModalRopa}
-                            verModalRopa={verModalRopa}
-                        />
+                        {login === "cliente" &&(
+                            <Carrito
+                                alerta={alerta}
+                                carrito={carrito}
+                                borrarElemento={borrarElemento}
+                                controlarModal={controlarModalRopa}
+                                verModalRopa={verModalRopa}
+                            />)
+                        }
                     </li>
                 </ul>
             </nav>

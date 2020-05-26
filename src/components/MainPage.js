@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
 import Body from '../components/Body';
+import BodyAdmin from '../components/BodyAdmin';
 import Footer from '../components/Footer';
 import datos from '../datos/prendas'
 
@@ -12,7 +13,8 @@ class MainPage extends Component {
     carrito: [],
     alerta: false,
     verModalLogin: false,
-    verModalRopa: false
+    verModalRopa: false,
+    login: "admin"
   }
 
   agregarCarrito = producto => {
@@ -48,7 +50,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const { productos, carrito, alerta, verModalLogin, verModalRopa } = this.state
+    const { productos, carrito, alerta, verModalLogin, verModalRopa, login } = this.state
     return (
       <>
         <Header
@@ -59,12 +61,31 @@ class MainPage extends Component {
           verModalRopa={verModalRopa}
           controlarModalRopa={this.controlarModalRopa}
           controlarModalLogin={this.controlarModalLogin}
+          login={login}
         />
         <section className="productos">
           <h1>Nuestros Productos</h1>
           <div className="container" id="container">
-            {productos.map(producto => (
-              <Body
+            {login === "cliente" && productos.map(producto => {
+              let cuerpo = ""
+              if (producto.dispobile) {
+                cuerpo = (
+                  <Body
+                    key={producto.id}
+                    id={producto.id}
+                    nombre={producto.nombre}
+                    talla={producto.talla}
+                    cantidad={producto.cantidad}
+                    precio={producto.precio}
+                    img={producto.img}
+                    agregarCarrito={this.agregarCarrito}
+                  />
+                )
+              }
+              return cuerpo
+            })}
+            {login === "admin" && productos.map(producto => (
+              <BodyAdmin
                 key={producto.id}
                 id={producto.id}
                 nombre={producto.nombre}
@@ -72,6 +93,7 @@ class MainPage extends Component {
                 cantidad={producto.cantidad}
                 precio={producto.precio}
                 img={producto.img}
+                dispobile={producto.dispobile}
                 agregarCarrito={this.agregarCarrito}
               />
             ))}
