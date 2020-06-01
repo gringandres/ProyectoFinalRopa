@@ -1,25 +1,31 @@
-import React, { Component } from 'react'
-import Tabla from './Tabla'
-import ModalTabla from './ModalTabla'
+import React, { Component } from "react";
+import Tabla from "./Tabla";
+import ModalTabla from "./ModalTabla";
 
 class Carrito extends Component {
   constructor(props) {
     super(props);
     this.state = {
       mostrarCarrito: false,
-      valor: 0
-    }
+      valor: 0,
+    };
   }
 
   controlarCarrito = () => {
     this.setState({
-      mostrarCarrito: !this.state.mostrarCarrito
-    })
-  }
+      mostrarCarrito: !this.state.mostrarCarrito,
+    });
+  };
 
   render() {
-    const { mostrarCarrito, cantidadElegida } = this.state
-    const { alerta, carrito, borrarElemento, controlarModal, verModalRopa } = this.props
+    const { mostrarCarrito, cantidadElegida } = this.state;
+    const {
+      alerta,
+      carrito,
+      borrarElemento,
+      controlarModal,
+      verModalRopa,
+    } = this.props;
     const carritoMostrar = (
       <div className="menuCarrito menudos" id="menuCarrito">
         <h3>Carrito</h3>
@@ -31,7 +37,7 @@ class Carrito extends Component {
             <th>Cantidad</th>
             <th>Precio</th>
           </tr>
-          {carrito.map(carro => (
+          {carrito.map((carro) => (
             <>
               <Tabla
                 key={carro.id}
@@ -49,33 +55,37 @@ class Carrito extends Component {
         <button
           className="botonAgregar"
           onClick={() => {
-            controlarModal()
-            this.controlarCarrito()
+            controlarModal();
+            this.controlarCarrito();
           }}
         >
           Continuar
         </button>
       </div>
-    )
+    );
 
     return (
       <>
-        <i className="fas fa-shopping-cart" id="carrito" onClick={this.controlarCarrito}>
+        <i
+          className="fas fa-shopping-cart"
+          id="carrito"
+          onClick={this.controlarCarrito}
+        >
           {alerta && <p id="notificacion" />}
         </i>
         {carrito.length > 0 && mostrarCarrito && carritoMostrar}
-        {verModalRopa ?
+        {verModalRopa ? (
           <ModalTabla
             controlarModal={controlarModal}
             borrarElemento={borrarElemento}
             carrito={carrito}
             controlarCantidad={this.controlarCantidad}
             cantidadElegida={cantidadElegida}
-          /> : null}
-
+          />
+        ) : null}
       </>
-    )
+    );
   }
 }
 
-export default Carrito
+export default Carrito;

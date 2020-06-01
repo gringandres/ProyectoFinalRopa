@@ -1,69 +1,63 @@
-import React, { Component } from 'react'
-import Modal from './Modal'
-import TablaEditable from './TablaEditable'
+import React, { Component } from "react";
+import Modal from "./Modal";
+import TablaEditable from "./TablaEditable";
 
 class ModalTabla extends Component {
   state = {
     cantidadElegida: [],
     valor: 0,
-    mostrar: false
-  }
+    mostrar: false,
+  };
 
   cantidadEditar = (e, id) => {
-    const { carrito } = this.props
-    const valor = e.target.value
-    carrito.forEach(carro => {
+    const { carrito } = this.props;
+    const valor = e.target.value;
+    carrito.forEach((carro) => {
       if (carro.id === id) {
         if (carro.cantidad < valor) {
-          alert("No hay suficiente")
+          alert("No hay suficiente");
         } else {
-          this.controlarCantidad(id, valor)
+          this.controlarCantidad(id, valor);
         }
       }
-    })
-  }
+    });
+  };
 
   controlarCantidad = (id, valor) => {
     this.setState({
-      cantidadElegida: [
-        ...this.state.cantidadElegida,
-        { id, valor }
-      ]
-    })
-    const valorPrendas = this.calcularTotal()
+      cantidadElegida: [...this.state.cantidadElegida, { id, valor }],
+    });
+    const valorPrendas = this.calcularTotal();
     this.setState({
-      valor: valorPrendas
-    })
-  }
+      valor: valorPrendas,
+    });
+  };
 
   calcularTotal = () => {
-    const { carrito } = this.props
-    const { cantidadElegida, valor } = this.state
-    let valorPartes = 0
-    let cantidad = 0
+    const { carrito } = this.props;
+    const { cantidadElegida, valor } = this.state;
+    let valorPartes = 0;
+    let cantidad = 0;
     if (cantidadElegida.length > 0) {
-      carrito.forEach(carro => {
-        cantidad = cantidadElegida.find(elegida => {
+      carrito.forEach((carro) => {
+        cantidad = cantidadElegida.find((elegida) => {
           if (elegida.id === carro.id) {
-            cantidad = elegida.valor
+            cantidad = elegida.valor;
           }
-          return cantidad
-        })
-        valorPartes = valorPartes + (cantidad.valor * carro.precio)
-      })
+          return cantidad;
+        });
+        valorPartes = valorPartes + cantidad.valor * carro.precio;
+      });
     }
-    return (valorPartes + valor)
-  }
+    return valorPartes + valor;
+  };
 
   render() {
-    const { controlarModal, borrarElemento, carrito } = this.props
+    const { controlarModal, borrarElemento, carrito } = this.props;
 
     return (
       <>
-        <Modal
-          controlarModal={controlarModal}
-          name="ropa-modal"
-        >
+        <Modal controlarModal={controlarModal} name="ropa-modal">
           <table id="detallePedido">
             <tr>
               <th>Imagen</th>
@@ -73,7 +67,7 @@ class ModalTabla extends Component {
               <th>Cantidad a Comprar</th>
               <th>Precio</th>
             </tr>
-            {carrito.map(carro => (
+            {carrito.map((carro) => (
               <>
                 <TablaEditable
                   key={carro.id}
@@ -92,14 +86,14 @@ class ModalTabla extends Component {
             ))}
           </table>
           <button>comprar</button>
-          <button onClick={() => this.setState({ mostrar: true })}>Calcular Total</button>
-          {this.state.mostrar &&
-            <label>{this.state.valor}</label>
-          }
+          <button onClick={() => this.setState({ mostrar: true })}>
+            Calcular Total
+          </button>
+          {this.state.mostrar && <label>{this.state.valor}</label>}
         </Modal>
       </>
-    )
+    );
   }
 }
 
-export default ModalTabla
+export default ModalTabla;

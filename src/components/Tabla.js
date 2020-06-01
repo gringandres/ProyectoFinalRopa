@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
 
 function Tabla({ img, precio, nombre, talla, cantidad, id, borrarElemento }) {
   return (
     <>
       <tr>
-        <td><img src={img} alt="" /></td>
+        <td>
+          <img src={img} alt="" />
+        </td>
         <td>{nombre}</td>
         <td>{talla}</td>
         <td>{cantidad}</td>
@@ -13,14 +15,16 @@ function Tabla({ img, precio, nombre, talla, cantidad, id, borrarElemento }) {
           <a
             className="borrar"
             href="/"
-            onClick={(e) => { borrarElemento(e, id) }}
+            onClick={(e) => {
+              borrarElemento(e, id);
+            }}
           >
             x
           </a>
         </td>
       </tr>
     </>
-  )
+  );
 }
 
-export default Tabla
+export default Tabla;
