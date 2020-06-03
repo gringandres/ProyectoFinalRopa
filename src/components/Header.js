@@ -13,6 +13,10 @@ function Header({
   controlarModalLogin,
   controlarModalRopa,
   login,
+  logearUsuario,
+  usuarioNombre,
+  contraseña,
+  onHandle,
 }) {
   return (
     <div className="header">
@@ -73,15 +77,24 @@ function Header({
           nombre="sign-in"
         >
           <h1>Por favor ingrese sus datos</h1>
-          <form method="POST" class="logeo">
-            <input type="text" placeholder="Usuario" name="usuario" required />
+          <form class="logeo" onSubmit={(e) => logearUsuario(e)}>
+            <input
+              type="text"
+              placeholder="Usuario"
+              name="usuarioNombre"
+              value={usuarioNombre}
+              onChange={onHandle}
+              required
+            />
             <input
               type="password"
               placeholder="Contraseña"
-              name="clave"
+              name="contraseña"
+              value={contraseña}
+              onChange={onHandle}
               required
             />
-            <input type="submit" value="Enviar" />
+            <input type="submit" />
           </form>
         </Modal>
       ) : null}

@@ -10,6 +10,7 @@ function BodyAdmin({
   img,
   dispobile,
   agregarCarrito,
+  borrarPrenda,
 }) {
   const botonEditar = (e) => {
     e.preventDefault();
@@ -32,6 +33,9 @@ function BodyAdmin({
       </p>
       <button className="botonAgregar" onClick={botonEditar}>
         Editar
+      </button>
+      <button className="botonAgregar" onClick={(e) => borrarPrenda(e, id)}>
+        borrar
       </button>
     </div>
   );
