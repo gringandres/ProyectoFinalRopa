@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
 class Modal extends Component {
   render() {
@@ -15,21 +15,22 @@ class Modal extends Component {
             display: "grid",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "rgba(0,0,0,0.3)"
+            backgroundColor: "rgba(0,0,0,0.3)",
           }}
           className={this.props.nombre}
         >
           <div className="logeo">
             <div>{this.props.children}</div>
             <hr />
-            <button className="cerrarModal" onClick={this.props.controlarModal} >X</button>
+            <button className="cerrarModal" onClick={this.props.controlarModal}>
+              X
+            </button>
           </div>
         </div>
-
       </div>,
       document.getElementById("modal-portal")
     );
   }
 }
 
-export default Modal
+export default Modal;
